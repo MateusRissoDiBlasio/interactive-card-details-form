@@ -1,0 +1,566 @@
+*{
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    .btns{
+            margin-top: 8px;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color:  hsl(278, 68%, 11%);
+            color: hsl(0, 100%, 100%);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 18px;
+        }
+}
+
+.cardImageContainer{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding: 15px;
+    background-image: url('./images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    color: hsl(0, 100%, 100%);
+    font-family: "Space Grotesk", sans-serif;
+    margin-bottom: -45px;
+    #cardFront{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-image: url('./images/bg-card-front.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 255px;
+        height: 127px;
+        gap: 15px;
+        padding: 18px;
+        z-index: 1;
+        transform: translate(0, 106px);
+        #cardLogo{
+            width: 50px;
+            margin-bottom: 30px;
+        }
+        #cardNumber{
+            display: flex;
+            align-self: center;
+            width: 250px;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 2.5px;
+        }
+        #cardDetailsContainer{
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            letter-spacing: 1px;
+            font-weight: 300;
+            #expireDate{
+                display: flex;
+                margin: 0;
+            }
+        }
+        #cardName{
+            text-transform: uppercase;
+        }
+    }
+    #cardBack{
+        position: relative;
+        background-image: url('./images/bg-card-back.png');
+        width: 250px;
+        padding: 18px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 127px;
+        z-index: 0;
+        transform: translate(56px, -146px);
+        color: hsl(0, 100%, 100%);
+        display: flex;    
+        #cvcNumber{
+            align-self: center;
+            transform: translate(215px, -5px);
+            font-size: 9px;
+            letter-spacing: 1.2px;
+        }
+    }
+}
+
+#cardForm{
+    font-family: "Space Grotesk", sans-serif;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    form{
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        input{
+            height: 22px;
+            border-radius: 10px;
+            border: 1px solid hsl(270, 3%, 87%);
+            padding: 10px 15px;
+            font-size: 16px;
+            letter-spacing: 0.5px;  
+            background: white; 
+        }
+        label{
+            margin-bottom: 8px;
+        }
+        span{
+            margin-bottom: 8px;
+        }
+        input::placeholder{
+            color: hsl(212, 12%, 71%);
+            opacity: 0.8;
+            font-weight: 500;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 17px;
+        }
+        input:focus{
+            outline: none;
+            border: 1px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+            linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+            outline: none;
+        }
+        input:hover{
+            outline: none;
+            border: 1px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+            linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+            cursor: pointer;
+        }
+        #datesInputContainer{
+            display: flex;
+            flex-direction: row;
+        }
+        #datesContainer{
+            display: flex;
+            flex-direction: column;
+            input{
+                width: 40px;
+            }
+        }
+        #cvcInputContainer{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        #cardCvcInput{
+                width: 144px;
+        }
+        .errorMsg{
+            color:hsl(0, 100%, 66%);
+            font-weight: 500;
+            font-size: 10px;
+            transform: translate(0, 4px);
+            text-transform: none;
+        }
+        #nameErrorMsg, #cardNumberErrorMsg, #ExpDateErrorMsg, #cardCvcErrorMsg{
+            opacity: 0;
+        }
+    }
+}
+
+#formSubmitionComplete{
+    display: none;
+    font-family: "Space Grotesk", sans-serif;
+    padding: 20px;
+    height: 327px;
+    .confirmationMsg{
+        width: 335px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        img{
+            width: 80px;
+            align-self: center;
+            margin-bottom: 34px;
+        }
+        h1{
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 26px;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+        p{
+            font-size: 18px;
+            font-weight: 500;
+            color: hsl(212, 12%, 71%);
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+footer{
+    margin-top: 20px;
+    .attribution { 
+        font-size: 11px; text-align: center;
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        p{
+            a { 
+                color: hsl(228, 45%, 44%); 
+            }
+        }
+    }
+}
+
+@media (min-width: 425px){
+    
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardImageContainer{    
+        width: 395px;    
+        align-items: center;
+        background-size: contain;
+        background-position: top center;
+        margin-bottom: -125px;
+        #cardFront{
+            width: 300px;
+            height: 174px;
+            transform: translate(-20px, 106px);
+            #cardLogo{
+                width: 60px;
+                margin-bottom: 20px;
+                transform: translate(5px, 5px);
+            }
+            #cardNumber{
+                width: 300px;
+                font-size: 20px;
+                letter-spacing: 2.5px; 
+                margin-bottom: 15px; 
+                justify-content: space-around;                    
+            }
+            #cardDetailsContainer{
+                width: 300px;
+                font-size: 14px;
+            }                
+        }
+        #cardBack{
+            width: 300px;
+            height: 174px;
+            transform: translate(20px, -208px);
+            #cvcNumber{               
+                transform: translate(245px, -12px);
+                font-size: 12px;
+            }
+        }
+    }
+
+    #cardForm{
+        font-family: "Space Grotesk", sans-serif;
+        padding: 20px;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        form{
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            /* gap: 8px; */
+            input{
+                height: 22px;
+                border-radius: 10px;
+                border: 1px solid hsl(270, 3%, 87%);
+                padding: 10px 15px;
+                font-size: 16px;
+                letter-spacing: 0.5px;  
+                background: white; 
+            }
+            label{
+                margin-bottom: 8px;
+            }
+            span{
+                margin-bottom: 8px;
+            }
+            input::placeholder{
+                color: hsl(212, 12%, 71%);
+                opacity: 0.8;
+                font-weight: 500;
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 17px;
+            }
+            input:focus{
+                outline: none;
+                border: 1px solid transparent;
+                background: linear-gradient(white, white) padding-box,
+                linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+                outline: none;
+            }
+            input:hover{
+                outline: none;
+                border: 1px solid transparent;
+                background: linear-gradient(white, white) padding-box,
+                linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+                cursor: pointer;
+            }
+            #datesInputContainer{
+                display: flex;
+                flex-direction: row;
+            }
+            #datesContainer{
+                display: flex;
+                flex-direction: column;
+                input{
+                    width: 40px;
+                }
+            }
+            #cvcInputContainer{
+                display: flex;
+                flex-direction: column;
+                margin-left: 10px;
+            }
+            #cardCvcInput{
+                    width: 144px;
+                }
+            .errorMsg{
+                color:hsl(0, 100%, 66%);
+                font-weight: 500;
+                font-size: 10px;
+                transform: translate(0, 4px);
+                text-transform: none;
+            }
+            #nameErrorMsg, #cardNumberErrorMsg, #ExpDateErrorMsg, #cardCvcErrorMsg{
+                opacity: 0;
+            }
+        }
+    }
+
+    #formSubmitionComplete{
+        display: none;
+        font-family: "Space Grotesk", sans-serif;
+        padding: 20px;
+        height: 327px;
+        .confirmationMsg{
+            width: 335px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            img{
+                width: 80px;
+                align-self: center;
+                margin-bottom: 34px;
+            }
+            h1{
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 26px;
+                letter-spacing: 4px;
+                margin-bottom: 16px;
+            }
+            p{
+                font-size: 18px;
+                font-weight: 500;
+                color: hsl(212, 12%, 71%);
+                opacity: 0.9;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px){
+
+    body{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('./images/bg-main-desktop.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        .btns{
+            margin-top: 8px;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color:  hsl(278, 68%, 11%);
+            color: hsl(0, 100%, 100%);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 18px;
+        }
+    }
+
+    #cardIllustration{
+        width: 33.5vw;
+    }
+
+    .cardImageContainer{
+        padding: 15px;
+        background-image: none;
+        color: hsl(0, 100%, 100%);
+        font-family: "Space Grotesk", sans-serif;
+        margin-bottom: 0px;
+        width: 650px;
+        height: 550px;
+        overflow-x: visible;
+        #cardFront{
+            width: 412px;
+            height: 209px;
+            transform: translate(48px, 31px);
+            #cardLogo{
+                transform: translate(14px, 10px);
+                width: 85px;
+                margin-bottom: 59px;
+            }
+            #cardNumber{
+                align-self: flex-start;
+                width: 380px;
+                font-size: 28px;
+                text-align: left;
+                letter-spacing: 2.5px;
+                margin-bottom: 11px;
+            }
+            #cardDetailsContainer{
+                width: 380px;
+                align-self: center;
+                justify-content: space-between;
+                font-size: 14px;
+                letter-spacing: 1.6px;
+                font-weight: 400;
+            }                
+        }
+        #cardBack{
+            width: 412px;
+            height: 209px;
+            transform: translate(142px, 68px);
+            #cvcNumber{
+                transform: translate(335px, -3px);
+                font-size: 14px;
+                letter-spacing: 1.2px;
+            }
+        }
+    }
+
+    #cardForm{
+        width: 58vw;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        display: flex;
+        justify-content: center;
+        margin-top: 69px;
+        font-family: "Space Grotesk", sans-serif;
+        margin-left: 8.5vw;
+        form{
+            width: 381px;
+            input{
+                height: 23px;
+                font-size: 17px;
+                font-family: "Space Grotesk", sans-serif;
+                font-weight: 500;
+            }
+            label{
+                margin-bottom: 8px;
+            }
+            span{
+                margin-bottom: 13px;
+            }
+            #datesInputContainer{
+                display: flex;
+                flex-direction: row;
+                margin-top: 21px;
+                margin-bottom: 15px;
+            }
+            #datesContainer{
+                display: flex;
+                flex-direction: column;
+                div{
+                    display: flex;
+                    gap: 9px;
+                }
+                input{
+                    width: 48px;
+                }
+            }
+            #cvcInputContainer{
+                display: flex;
+                flex-direction: column;
+                margin-left: 20px;
+            }
+            #cardCvcInput{
+                    width: 160px;
+                }
+            .errorMsg{
+                color:hsl(0, 100%, 66%);
+                font-weight: 600;
+                font-size: 11px;
+                transform: translate(0, 8px);
+                text-transform: none;
+                letter-spacing: 0;
+            }
+            #nameErrorMsg, #cardNumberErrorMsg, #ExpDateErrorMsg, #cardCvcErrorMsg{
+                opacity: 0;
+            }
+        }
+    }
+
+    #formSubmitionComplete{
+        width: 58vw;
+        display: none;
+        font-family: "Space Grotesk", sans-serif;
+        padding: 20px;
+        height: 327px;
+        justify-content: center;
+        margin-left: 8.5vw;
+        .confirmationMsg{
+            width: 381px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            img{
+                width: 80px;
+                align-self: center;
+                margin-bottom: 34px;
+            }
+            h1{
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 26px;
+                letter-spacing: 4px;
+                margin-bottom: 16px;
+            }
+            p{
+                font-size: 18px;
+                font-weight: 500;
+                color: hsl(212, 12%, 71%);
+                opacity: 0.9;
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    footer{
+        display: flex;
+        position: relative;
+        transform: translate(-57.5vw, 40vh);
+        width: 0;
+        height: 0;
+        .attribution{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            p{
+                display: flex;
+                width: 160px;
+                height: 20px;
+                gap: 4px;
+            }
+        }
+    }
+}
